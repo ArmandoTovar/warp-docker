@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Inicia log.sh en segundo plano
-./entrypoint.sh &
+./entrypoint.sh > /dev/null 2>&1 &
 
 # Guarda el ID del proceso de log.sh
 log_pid=$!
