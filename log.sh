@@ -1,5 +1,5 @@
 #!/bin/bash
-
+sleep "30"
 # Cambiar el modo de warp-cli a doh
 echo "Configurando warp-cli al modo doh..."
 warp-cli mode doh
