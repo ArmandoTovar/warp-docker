@@ -55,6 +55,8 @@ RUN case ${TARGETPLATFORM} in \
     fi && \
     chmod +x /usr/bin/gost && \
     chmod +x /entrypoint.sh && \
+    chmod +x /control.sh && \
+     chmod +x /log.sh && \
     chmod +x /healthcheck/index.sh && \
     useradd -m -s /bin/bash warp && \
     echo "warp ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/warp
