@@ -12,6 +12,8 @@ LABEL GOST_VERSION=${GOST_VERSION}
 LABEL COMMIT_SHA=${COMMIT_SHA}
 
 COPY entrypoint.sh /entrypoint.sh
+COPY log.sh /log.sh
+COPY control.sh /control.sh
 COPY ./healthcheck /healthcheck
 
 # install dependencies
@@ -71,5 +73,4 @@ ENV BETA_FIX_HOST_CONNECTIVITY=
 
 HEALTHCHECK --interval=15s --timeout=5s --start-period=10s --retries=3 \
   CMD /healthcheck/index.sh
-
-ENTRYPOINT ["/entrypoint.sh"]
+ENTRYPOINT ["sh", "-c", "/control.sh"]
